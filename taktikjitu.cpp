@@ -1,7 +1,7 @@
 /* Program Tugas Akhir (Game Kuis Taktik Jitu)
  * Creator	: Habibi Mustafa
  * Date		: 27/12/2013
- * Updated	: 4/1/2014
+ * Updated	: 6/1/2014
  */
 
 // My Own Header

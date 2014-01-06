@@ -22,7 +22,8 @@ int * urutan(int urut[5]){
 
 int main(){
 	const int s = 5;
-    string banksoal[s][2][6] = {
+	const int w = 2;
+    string banksoal[s][w][6] = {
     	{
 	        { "Penambahan nilai mata uang untuk mengembalikan daya beli masyarakat disebut …", 
 	          "Deflasi", "Inflasi", "Defisit", "Resesi", "Devaluasi" },
@@ -63,7 +64,7 @@ int main(){
     for(int i=0;i<9;i++){
     	int k = (i>(s-1))?(i-(s-1)):i;
     	int m = u[k];
-    	int n = rand() % 2;
+    	int n = rand() % w;
 
     	for(int j=0;j<6;j++){
     		persoalan[i][j] = banksoal[m][n][j];

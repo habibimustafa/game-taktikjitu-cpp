@@ -20,6 +20,25 @@ int * urutan(int urut[5]){
     return urut;
 }
 
+void aturan(){
+	const int b=9;
+	string a[b] = {
+		"Permainan ini terdiri dari 2 orang pemain",
+		"Masing-masing pemain memiliki simbol 'X' dan 'O'",
+		"Para pemain akan disuguhkan 9 kotak yang harus dipilih",
+		"Masing-masing kotak memiliki sebuah pertanyaan yang harus dijawab",
+		"Jika pertanyaan dapat dijawab dengan benar maka nomor kotak akan menjadi simbol pemain",
+		"Jika pertanyaan tidak dapat dijawab dengan benar maka nomor pada kotak tidak akan berubah",
+		"Kotak yang sudah berubah menjadi simbol tidak dapat dipilih kembali oleh pemain",
+		"Untuk memenangkan permainan ini pemain diharuskan membentuk pola simbol horizontal, vertikal ataupun diagonal",
+		"Pemain yang lebih dahulu membentuk pola tersebut dinyatakan sebagai pemenang"
+	};
+
+	gantibaris();
+	for(int c=0;c<b;c++) ucp(a[c],"# ","\n");
+	gantibaris();
+}
+
 int main(){
 	const int s = 5;
 	const int w = 2;
@@ -93,6 +112,8 @@ int main(){
 
 	// aturan main
 	rules:
+	aturan(); cin.ignore();
+	tny("Tekan 'enter' untuk kembali ke menu utama!");
 	goto mulai;
 
 	// mulai bermain

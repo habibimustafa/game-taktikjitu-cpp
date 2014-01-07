@@ -7,89 +7,8 @@
 // My Own Header
 #include </home/habibi/Desktop/CPlus/9/hd-main.h>
 
-// acak urutan soal dari tiap tipe
-int * urutan(int urut[5]){
-    srand(time(0)); int s = 5;
-    for (int i=0; i<(s-1); i++) {
-        int r = i + (rand() % (s-i));
-        int temp = urut[i];
-        urut[i]  = urut[r];
-        urut[r]  = temp;
-    }
-
-    return urut;
-}
-
-void aturan(){
-	const int b=9;
-	string a[b] = {
-		"Permainan ini terdiri dari 2 orang pemain",
-		"Masing-masing pemain memiliki simbol 'X' dan 'O'",
-		"Para pemain akan disuguhkan 9 kotak yang harus dipilih",
-		"Masing-masing kotak memiliki sebuah pertanyaan yang harus dijawab",
-		"Jika pertanyaan dapat dijawab dengan benar maka nomor kotak akan menjadi simbol pemain",
-		"Jika pertanyaan tidak dapat dijawab dengan benar maka nomor pada kotak tidak akan berubah",
-		"Kotak yang sudah berubah menjadi simbol tidak dapat dipilih kembali oleh pemain",
-		"Untuk memenangkan permainan ini pemain diharuskan membentuk pola simbol horizontal, vertikal ataupun diagonal",
-		"Pemain yang lebih dahulu membentuk pola tersebut dinyatakan sebagai pemenang"
-	};
-
-	gantibaris();
-	for(int c=0;c<b;c++) ucp(a[c],"# ","\n");
-	gantibaris();
-}
-
-int main(){
-	const int s = 5;
-	const int w = 2;
-    string banksoal[s][w][6] = {
-    	{
-	        { "Penambahan nilai mata uang untuk mengembalikan daya beli masyarakat disebut …", 
-	          "Deflasi", "Inflasi", "Defisit", "Resesi", "Devaluasi" },
-	        { "Organisasi PBB yang bergerak dalam bidang kemanusiaan adalah …", 
-	          "UNHCR", "WHO", "ILO", "UNESCO", "UNICEF" }
-    	},
-    	{
-	        { "Candi Muara Takus merupakan peninggalan kerajaan …", 
-	          "Sriwijaya", "Majapahit", "Singosari", "Samudera Pasai", "Mataram" },
-	        { "Hari Pramuka diperingati setiap tanggal …", 
-	          "14 Agustus", "26 Juni", "10 November", "2 Mei", "28 Oktober" }
-    	},
-    	{
-	        { "Pemerintah darurat RI pernah memindahkan ibukota Indonesia ke kota …", 
-	          "Yogyakarta", "Bukittinggi", "Bandung", "Jakarta", "Surabaya" },
-	        { "Terusan Suez terdapat di negara …", 
-	          "Mesir", "Arab Saudi", "Kanada", "Perancis", "Palestina" }
-    	},
-    	{
-	        { "Suku Samin terdapat di daerah …", 
-	          "Blora", "Pacitan", "Banten", "Cirebon", "Brebes" },
-	        { "Konferensi Meja Bundar diadakan di Kota …", 
-	          "Den Hag", "Jakarta", "Berlin", "Washington", "Perth" }
-    	},
-    	{
-	        { "Konferensi Meja Bundar diadakan di Kota …", 
-	          "Den Hag", "Jakarta", "Berlin", "Washington", "Perth" },
-	        { "Nama penghargaan di bidang perdamaian adalah …", 
-	          "Nobel", "Oscar", "Norbert", "Emmy", "Pulitzer" }
-    	},
-    };
-
-    int t[s]; for(int i=0;i<s;i++){t[i]=i;}
-    int *u = urutan(t);
-
-    srand(time(0));
-    string persoalan[9][6];
-    for(int i=0;i<9;i++){
-    	int k = (i>(s-1))?(i-(s-1)):i;
-    	int m = u[k];
-    	int n = rand() % w;
-
-    	for(int j=0;j<6;j++){
-    		persoalan[i][j] = banksoal[m][n][j];
-    	}
-    }
-
+int main()
+{
 	mulai: bersih(); 
 	ucp("++++++++++++++++++++++++++++++++++++++\n");
 	ucp("++++++++++++ Tak Tik Jitu ++++++++++++\n");
@@ -119,7 +38,7 @@ int main(){
 	// mulai bermain
 	play:
 	cin.ignore();
-	taktik(persoalan);
+	permainan();
 	gantibaris(); ucp("---\n");
 	ucp("Menu Permainan:\n");
 	ucp("1. Main Lagi\n");

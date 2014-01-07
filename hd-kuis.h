@@ -59,3 +59,16 @@ bool soal(string data[6]){
 	if(opsi[p] == data[1]) return true;
 	else return false;
 }
+
+// acak urutan soal dari tiap tipe
+int * urutan(int urut[5]){
+    srand(time(0)); int s = 5;
+    for (int i=0; i<(s-1); i++) {
+        int r = i + (rand() % (s-i));
+        int temp = urut[i];
+        urut[i]  = urut[r];
+        urut[r]  = temp;
+    }
+
+    return urut;
+}
